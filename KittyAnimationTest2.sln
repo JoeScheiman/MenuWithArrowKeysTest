@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KittyAnimationTest2", "KittyAnimationTest2\KittyAnimationTest2.csproj", "{33268A15-0A21-42C3-9946-668DA2E62A6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33268A15-0A21-42C3-9946-668DA2E62A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33268A15-0A21-42C3-9946-668DA2E62A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33268A15-0A21-42C3-9946-668DA2E62A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33268A15-0A21-42C3-9946-668DA2E62A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D84F8C9-988B-4CFD-8462-2C2837BFFBB4}
+	EndGlobalSection
+EndGlobal
