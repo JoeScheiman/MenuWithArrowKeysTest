@@ -7,10 +7,10 @@ namespace KittyAnimationTest2
 {
     class Program
     {
-        static ConsoleColor[] MenuColors = {
+        static ConsoleColor[] MenuColors = { //This part isn't completely necessary, some other ideas popped in my mind that would utilize a way to call upon different colors with an int
             ConsoleColor.Blue,
             ConsoleColor.Black,
-            ConsoleColor.DarkBlue,
+            ConsoleColor.Blue,
             ConsoleColor.White
         };
 
@@ -19,29 +19,35 @@ namespace KittyAnimationTest2
             Console.Clear();
 
             Console.WriteLine("\n\n\n");
+            Console.Write("\n\t"); //this line is important to not highlight blank space
 
             if (selectionNum == 1) Console.BackgroundColor = MenuColors[2];
-            Console.WriteLine("\t1: Feed");
+            Console.Write("1: Feed");
             if (selectionNum == 1) Console.ResetColor();
+            Console.Write("\n\t");
 
             if (selectionNum == 2) Console.BackgroundColor = MenuColors[2];
-            Console.WriteLine("\t2: Play");
+            Console.Write("2: Play");
             if (selectionNum == 2) Console.ResetColor();
+            Console.Write("\n\t");
 
             if (selectionNum == 3) Console.BackgroundColor = MenuColors[2];
-            Console.WriteLine("\t3: Nap");
+            Console.Write("3: Nap");
             if (selectionNum == 3) Console.ResetColor();
+            Console.Write("\n\t");
 
             if (selectionNum == 4) Console.BackgroundColor = MenuColors[2];
-            Console.WriteLine("\t4: Go Back");
+            Console.Write("4: Go Back");
             if (selectionNum == 4) Console.ResetColor();
+            Console.Write("\n\n\n\t"); //move the cursor - not needed
+            Console.CursorVisible = false; // HIDE the cursor
         }
 
         static void Main(string[] args)
         {
 
             int menuSelectionCurrent = 1;
-            int menuSelectionNext = 0;
+            int menuSelectionNext = 0; //didn't actually need this
             bool selected = false;
 
             MenuHighlight(1);
@@ -68,8 +74,8 @@ namespace KittyAnimationTest2
                     case ConsoleKey.LeftArrow:
                         Console.WriteLine("Down!");
                         break;
-                    case ConsoleKey.D1:
-                    case ConsoleKey.NumPad1:
+                    case ConsoleKey.D1: //the D1 means "1" above the q key and Numpad1 means "1" on num pad!
+                    case ConsoleKey.NumPad1: //once you're in the switch, it continues until a break, so D1 or NumPad1 makes menuSelectionCurrent = 1 
                         Console.WriteLine("Decision Has Been Made!!!");
                         menuSelectionCurrent = 1;
                         selected = true;
@@ -99,23 +105,33 @@ namespace KittyAnimationTest2
                     default:
                         break;
                 }
-                if (menuSelectionCurrent > 4) menuSelectionCurrent = 4;
-                else if (menuSelectionCurrent < 1) menuSelectionCurrent = 1;
-                if (selected)
+                /*
+                if (menuSelectionCurrent > 4) menuSelectionCurrent = 4; // Don't go over 4
+                else if (menuSelectionCurrent < 1) menuSelectionCurrent = 1; // Don't go under 1
+                */
+                if (menuSelectionCurrent > 4) menuSelectionCurrent = 1; //cycle from bottom to top
+                else if (menuSelectionCurrent < 1) menuSelectionCurrent = 4; //cycle from top to bottom
+
+                //This next part can probably be done in the above switch statement... MAYBE... it's late and bedtime
+                if (selected) //if a menu item was selected...next go to what was selected, probably a method
                 {
                     switch (menuSelectionCurrent)
                     {
                         case 1:
                             Console.WriteLine("....#1 Chosen!");
+                            //theShelter[currentPet].Feed();
                             break;
                         case 2:
                             Console.WriteLine("....#2 Chosen!");
+                            //theShelter[currentPet].Play();
                             break;
                         case 3:
                             Console.WriteLine("....#3 Chosen!");
+                            //theShelter[currentPet].Nap();
                             break;
                         case 4:
                             Console.WriteLine("....#4 Chosen!");
+                            //mainMenu();
                             break;
                         default:
                             Console.WriteLine("....NOPE Chosen!");
