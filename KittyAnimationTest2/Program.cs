@@ -5,17 +5,35 @@ using System.Threading;
 
 namespace KittyAnimationTest2
 {
+    class MenuAndInput
+    {
+        public char Output { set; get; }
+
+        //public List<> Menu { set; get; }
+
+
+    }
+
+
+
     class Program
     {
         static ConsoleColor[] MenuColors = { //This part isn't completely necessary, some other ideas popped in my mind that would utilize a way to call upon different colors with an int
-            ConsoleColor.Blue,
-            ConsoleColor.Black,
+            ConsoleColor.Red,
+            ConsoleColor.Green,
             ConsoleColor.Blue,
             ConsoleColor.White
         };
 
+        /*static char ShelterMenu(Shelter myShelter)
+        {
+            char selection = '1';
+            return (selection);
+        }*/
+
         static void MenuHighlight(int selectionNum)
         {
+            
             Console.Clear();
 
             Console.WriteLine("\n\n\n");
